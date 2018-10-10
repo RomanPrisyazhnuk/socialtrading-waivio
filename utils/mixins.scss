@@ -1,0 +1,49 @@
+@import './variables';
+
+/**
+  Flex mixin for setting flex container or element
+ */
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+/**
+  Mixin for describing common elements
+ */
+@mixin block($backColor, $padding: 0, $margin: 0) {
+  background-color: $backColor;
+  padding: $padding;
+  margin: $margin;
+}
+
+/**
+  Mixin for size of elements
+ */
+@mixin size($width: 100%, $height: 100%) {
+  width: $width;
+  height: $height;
+}
+
+/**
+  Mixin for vertical align
+ */
+@mixin verticalAlign($align) {
+  display: flex;
+  align-items: $align;
+}
+
+/**
+  Mixin for horizontal align
+ */
+@mixin horizontalAlign($align) {
+  display: flex;
+  justify-content: $align;
+}
+
+@mixin menuItem($height, $font-size) {
+  height: $height;
+  font-size: $font-size;
+}
