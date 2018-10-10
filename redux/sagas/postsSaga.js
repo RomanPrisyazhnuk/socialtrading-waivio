@@ -1,22 +1,20 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
+import api from '../../api/Posts';
 import {
     GET_POSTS_REQUEST,
-    GET_POSTS_SUCCESS,
-    GET_POSTS_ERROR,
+    getPostsSuccess,
+    getPostsError,
 } from '../actions/postsActions';
 
 export function* getPosts({
-    resolve, reject, ctx,
+    payload,
 }) {
-    // try {
-    //     const { data, headers } = yield call([api.regions, api.regions.getRegions]);
-    //     yield call(updateCookies, headers, ctx);
-    //     yield put(getRegionsSuccess(data.regions));
-    //     yield call(resolve);
-    // } catch (error) {
-    //     yield put(getRegionsError());
-    //     yield call(reject, error);
-    // }
+    try {
+        const data = yield call(api.getPosts, payload);
+        yield put(getPostsSuccess(data));
+    } catch (error) {
+        yield put(getPostsError());
+    }
 }
 
 export default function* actionWatcher() {

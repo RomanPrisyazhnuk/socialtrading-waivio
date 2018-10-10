@@ -4,15 +4,14 @@ export const GET_POSTS_ERROR = 'GET_POSTS_ERROR';
 
 export const getPosts = payload => ({
     type: GET_POSTS_REQUEST,
-    ...payload,
+    payload,
 });
 
 export const getPostsSuccess = payload => ({
     type: GET_POSTS_SUCCESS,
-    ...payload,
+    payload,
 });
 
-export const getPostsdError = payload => ({
+export const getPostsError = () => ({
     type: GET_POSTS_ERROR,
-    ...payload,
 });
