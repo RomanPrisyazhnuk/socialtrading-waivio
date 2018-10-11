@@ -44,7 +44,8 @@
     "react-svg": "^6.0.7",
     "reactstrap": "^6.4.0",
     "redux": "^4.0.0",
-    "redux-saga": "^0.16.0"
+    "redux-saga": "^0.16.0",
+    "styled-components": "^3.3.2"
   },
   "devDependencies": {
     "enzyme": "^3.6.0",
