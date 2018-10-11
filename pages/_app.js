@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import App, { Container } from 'next/app';
 import withRedux from 'next-redux-wrapper';
 import en from 'react-intl/locale-data/en';
+import locales from 'locales';
 import withReduxSaga from 'next-redux-saga';
 import configureStore from 'redux/store';
 import { addLocaleData, IntlProvider } from 'react-intl';
@@ -31,10 +32,11 @@ export class ExampleApp extends App {
             Component, pageProps, store,
         } = this.props;
         //const locale = getLocaleState(store.getState());
+        const locale = 'en';
         return (
             <Container>
                 <Provider store={store}>
-                    <IntlProvider locale="en">
+                    <IntlProvider locale={locale} messages={locales[locale].messages}>
                         <Component {...pageProps} />
                     </IntlProvider>
                 </Provider>
