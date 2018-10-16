@@ -5,7 +5,7 @@ import Flex from "components/common/Flex";
 import PropTypes from 'prop-types';
 
 const PostHeader = styled.div`
-  color: palevioletred;
+  color: green;
   font-size: 1.2em;
   max-wight: 100%;
   margin: 1em;

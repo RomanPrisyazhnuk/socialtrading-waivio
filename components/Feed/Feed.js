@@ -50,7 +50,7 @@ const Feed = ({
                 </Flex>
                 <Flex column>
                     <div className="col-sm list-group mt-3" id="postList">
-                        {posts && _.map(posts, post => <Post key={post.title} post={post} />)}
+                        {posts && _.map(posts, post => <Post key={post.id} post={post} />)}
                     </div>
                 </Flex>
             </div>
