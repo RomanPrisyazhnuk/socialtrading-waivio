@@ -17,4 +17,9 @@ export default {
         const returnData = await client.database.getDiscussions(data.filter, data.query);
         return returnData;
     },
+    createPost: async (payload) => {
+        console.log('client.broadcast.comment:', payload.payload);
+        const returnData = await client.broadcast.comment(payload.payload, payload.privateKey);
+        return returnData;
+    },
 };

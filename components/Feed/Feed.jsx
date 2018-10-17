@@ -1,13 +1,13 @@
-/* eslint-disable jsx-a11y/label-has-for,jsx-a11y/label-has-associated-control */
-import Button from 'components/Button/index';
+import Button from 'components/common/Button';
+import PostCreate from 'components/PostCreate';
 import _ from 'lodash';
 import React from 'react';
 import './Feed.scss';
-import Flex from "components/common/Flex/index";
+import Flex from "components/common/Flex";
 import Post from "components/Post";
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import WithToggleModal from '../HOC/withModal';
+import ToggledModal from 'components/common/Modal';
 
 const Wrapper = styled.section`
   padding: 4em;
@@ -17,7 +17,7 @@ const Wrapper = styled.section`
 const Feed = ({
     posts, getPosts,
 }) => {
-    const handleClick = () => {
+    const handleGetPosts = () => {
         const filter = document.getElementById('filters').value;
         const query = {
             tag: document.getElementById('tag').value,
@@ -25,14 +25,12 @@ const Feed = ({
         };
         getPosts(filter, query);
     };
-    const TogglerElement = Button;
-    const ModalBody = Button;
     return (
         <Wrapper>
             <div className="container" id="content">
                 <Flex column>
                     <div className="col-md-4">
-                        <label htmlFor="filters">Filters</label>
+                        <div>Filters</div>
                         <select id="filters" className="form-control">
                             <option value="trending">Trending</option>
                             <option value="hot">Hot</option>
@@ -41,21 +39,21 @@ const Feed = ({
                         </select>
                     </div>
                 </Flex>
-                <WithToggleModal
-                    TogglerElement={TogglerElement}
-                    ModalBody={ModalBody}
+                <ToggledModal
+                    TogglerElement={Button}
+                    ModalBody={PostCreate}
                     headerTitle='SomeHeaderTitle'
                     modalStyles={{ modalStyles: { width: '300px', marginTop: '50px' } }}
                 />
                 <Flex column>
                     <div className="col-md-4">
-                        <label htmlFor="tag">Tag</label>
+                        <div>Tag</div>
                         <input id="tag" className="form-control"/>
                     </div>
                 </Flex>
                 <Flex column>
                     <div className="col-md-4 mt-3">
-                        <button className="btn btn-primary" onClick={handleClick}>Get Posts</button>
+                        <button className="btn btn-primary" onClick={handleGetPosts}>Get Posts</button>
                     </div>
                 </Flex>
                 <Flex column>

@@ -15,3 +15,23 @@ export const getPostsSuccess = payload => ({
 export const getPostsError = () => ({
     type: GET_POSTS_ERROR,
 });
+
+export const CREATE_POST_REQUEST = 'CREATE_POST_REQUEST';
+export const CREATE_POST_SUCCESS = 'CREATE_POST_SUCCESS';
+export const CREATE_POST_ERROR = 'CREATE_POST_ERROR';
+
+
+export const createPost = (payload, privateKey) => ({
+    type: CREATE_POST_REQUEST,
+    payload,
+    privateKey,
+});
+
+export const createPostSuccess = payload => ({
+    type: CREATE_POST_SUCCESS,
+    payload,
+});
+
+export const createPostError = () => ({
+    type: CREATE_POST_ERROR,
+});
