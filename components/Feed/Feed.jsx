@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-for,jsx-a11y/label-has-associated-control */
+import Button from 'components/Button';
 import _ from 'lodash';
 import React from 'react';
 import './Feed.scss';
@@ -6,7 +7,7 @@ import Flex from "components/common/Flex";
 import Post from "components/Post";
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import withModal from '../HOC/withModal';
+import WithToggleModal from '../HOC/withModal';
 
 const Wrapper = styled.section`
   padding: 4em;
@@ -24,6 +25,8 @@ const Feed = ({
         };
         getPosts(filter, query);
     };
+    const TogglerElement = Button;
+    const ModalBody = Button;
     return (
         <Wrapper>
             <div className="container" id="content">
@@ -38,12 +41,11 @@ const Feed = ({
                         </select>
                     </div>
                 </Flex>
-                {withModal(
-                    <div>CREATE</div>,
-                    <div>ModalBody</div>,
-                    'SomeHeaderTitle',
-                    { modalStyles: { width: '300px', marginTop: '50px' } },
-                )}
+                <WithToggleModal
+                    TogglerElement={TogglerElement}
+                    ModalBody={ModalBody}
+                    headerTitle='SomeHeaderTitle'
+                />
                 <Flex column>
                     <div className="col-md-4">
                         <label htmlFor="tag">Tag</label>

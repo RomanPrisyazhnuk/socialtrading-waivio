@@ -15,55 +15,56 @@ const StyledModalHeader = styled(ModalHeader)`
 const StyledModalBody = styled(ModalBody)`
     padding: 15px;
 `;
-const withModal = (ToglerElement, ModalBody, headerTitle, modalStyles) => {
-    class WithToggleModal extends Component {
-        constructor(props) {
-            super(props);
-            this.state = { isOpen: false };
-        }
 
-        toggle() {
-            this.setState({ isOpen: false });
-        }
-
-        render() {
-            const { isOpen } = this.state;
-            return (
-                <Fragment>
-                    <ToglerElement onClick={this.toggle}/>
-                    {
-                        isOpen && (
-                            <StyledModal
-                                isOpen={isOpen}
-                                toggle={this.toggle}
-                                width={modalStyles.width}
-                                marginTop={modalStyles.marginTop}
-                            >
-                                <StyledModalHeader toggle={this.toggle}>
-                                    {headerTitle}
-                                </StyledModalHeader>
-                                <StyledModalBody>
-                                    <ModalBody {...this.props} toggle={this.toggle}/>
-                                </StyledModalBody>
-                            </StyledModal>
-                        )
-                    }
-                </Fragment>
-            );
-        }
+class WithToggleModal extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { isOpen: false };
     }
-    WithToggleModal.propTypes = {
-        isOpen: PropTypes.bool.isRequired,
-        toggle: PropTypes.func.isRequired,
-        headerTitle: PropTypes.string.isRequired,
-        modalStyles: PropTypes.object,
-    };
 
-    StyledModal.propTypes = {
-        width: PropTypes.string.isRequired,
-        marginTop: PropTypes.string.isRequired,
-    };
+    toggle() {
+        this.setState({ isOpen: false });
+    }
+
+    render() {
+        const { isOpen } = this.state;
+        const {
+            TogglerElement,
+            ModalBody,
+            headerTitle,
+            modalStyles,
+        } = this.props;
+        return (
+            <Fragment>
+                <TogglerElement onClick={this.toggle}/>
+                {
+                    isOpen && (
+                        <StyledModal
+                            isOpen={isOpen}
+                            toggle={this.toggle}
+                            width={modalStyles.width}
+                            marginTop={modalStyles.marginTop}
+                        >
+                            <StyledModalHeader toggle={this.toggle}>
+                                {headerTitle}
+                            </StyledModalHeader>
+                            <StyledModalBody>
+                                <ModalBody {...this.props} toggle={this.toggle}/>
+                            </StyledModalBody>
+                        </StyledModal>
+                    )
+                }
+            </Fragment>
+        );
+    }
+}
+WithToggleModal.propTypes = {
+    headerTitle: PropTypes.string.isRequired,
+    modalStyles: PropTypes.object,
+};
+StyledModal.propTypes = {
+    width: PropTypes.string.isRequired,
+    marginTop: PropTypes.string.isRequired,
 };
 
-
-export default withModal;
+export default WithToggleModal;
