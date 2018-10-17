@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-for,jsx-a11y/label-has-associated-control */
-import Button from 'components/Button';
+import Button from 'components/Button/index';
 import _ from 'lodash';
 import React from 'react';
 import './Feed.scss';
-import Flex from "components/common/Flex";
+import Flex from "components/common/Flex/index";
 import Post from "components/Post";
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
