@@ -1,5 +1,5 @@
 import { Modal, ModalHeader, ModalBody } from 'reactstrap';
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -16,27 +16,26 @@ const StyledModalBody = styled(ModalBody)`
     padding: 15px;
 `;
 
-class WithToggleModal extends Component {
+class WithToggleModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = { isOpen: false };
     }
 
     toggle() {
-        this.setState({ isOpen: false });
+        this.setState({ isOpen: !this.state.isOpen });
     }
 
     render() {
         const { isOpen } = this.state;
         const {
-            TogglerElement,
-            ModalBody,
-            headerTitle,
-            modalStyles,
+            TogglerElement, ModalBody, headerTitle, modalStyles,
         } = this.props;
         return (
             <Fragment>
-                <TogglerElement onClick={this.toggle}/>
+                <div onClick={this.toggle}>
+                    <TogglerElement />
+                </div>
                 {
                     isOpen && (
                         <StyledModal
