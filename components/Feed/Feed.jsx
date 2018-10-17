@@ -45,6 +45,7 @@ const Feed = ({
                     TogglerElement={TogglerElement}
                     ModalBody={ModalBody}
                     headerTitle='SomeHeaderTitle'
+                    modalStyles={{ modalStyles: { width: '300px', marginTop: '50px' } }}
                 />
                 <Flex column>
                     <div className="col-md-4">

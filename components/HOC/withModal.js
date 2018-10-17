@@ -1,5 +1,5 @@
 import { Modal, ModalHeader, ModalBody } from 'reactstrap';
-import React, { Fragment } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
@@ -16,14 +16,15 @@ const StyledModalBody = styled(ModalBody)`
     padding: 15px;
 `;
 
-class WithToggleModal extends React.Component {
+class WithToggleModal extends PureComponent {
     constructor(props) {
         super(props);
         this.state = { isOpen: false };
+        this.toggle = this.toggle.bind(this);
     }
 
     toggle() {
-        this.setState({ isOpen: !this.state.isOpen });
+        this.setState(prevState => ({ isOpen: !prevState.isOpen }));
     }
 
     render() {
