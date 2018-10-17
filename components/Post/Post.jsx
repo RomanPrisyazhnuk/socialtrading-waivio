@@ -1,7 +1,7 @@
 import React from 'react';
 import './Post.scss';
 import styled from 'styled-components';
-import Flex from "components/common/Flex";
+import Flex from "components/common/Flex/index";
 import PropTypes from 'prop-types';
 
 const PostHeader = styled.div`
