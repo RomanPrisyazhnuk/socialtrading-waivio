@@ -6,6 +6,7 @@ import Flex from "components/common/Flex";
 import Post from "components/Post";
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import withModal from '../HOC/withModal';
 
 const Wrapper = styled.section`
   padding: 4em;
@@ -37,6 +38,12 @@ const Feed = ({
                         </select>
                     </div>
                 </Flex>
+                {withModal(
+                    <div>CREATE</div>,
+                    <div>ModalBody</div>,
+                    'SomeHeaderTitle',
+                    { modalStyles: { width: '300px', marginTop: '50px' } },
+                )}
                 <Flex column>
                     <div className="col-md-4">
                         <label htmlFor="tag">Tag</label>
