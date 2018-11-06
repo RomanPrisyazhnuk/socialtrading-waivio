@@ -10,6 +10,8 @@ $width: 60;
     padding: 10px;
     .st-news-reload-image {
       margin-top: 10px;
+      height: 45px;
+      width: 45px;
       &:hover {
         transform: scale(1.2);
         transition: transform 0.5s;

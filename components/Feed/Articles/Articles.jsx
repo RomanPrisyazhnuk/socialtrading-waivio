@@ -40,7 +40,7 @@ export class Articles extends Component {
                         )
                         : (
                             <div className="st-news-not-present">
-                                <FormattedMessage id="news.notPresent"/>
+                                Нет новостей
                                 <div>
                                     <img className="st-news-reload-image" src="https://img.freepik.com/free-icon/reload_318-115198.jpg?size=338&ext=jpg"/>
                                 </div>

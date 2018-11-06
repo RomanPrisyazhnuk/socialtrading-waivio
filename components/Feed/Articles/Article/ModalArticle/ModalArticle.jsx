@@ -79,8 +79,8 @@ class ModalArticle extends Component {
                 Tags:
                     <input id="tags" type="text" size="65" className="form-control"/>
                 </div>
-                <button className='button btn-primary m-2' onClick={this.handleSetDefaults}>Set defaults</button>
-                <button className='button btn-primary m-2' onClick={this.handleCreatePost.bind(this, article, createPost)}>Send to Steem</button>
+                <button className='btn btn-primary m-2' onClick={this.handleSetDefaults}>Set defaults</button>
+                <button className='btn btn-primary m-2' onClick={this.handleCreatePost.bind(this, article, createPost)}>Send to Steem</button>
             </Modal>
         );
     }
