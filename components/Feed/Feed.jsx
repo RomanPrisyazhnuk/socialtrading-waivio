@@ -29,6 +29,19 @@ const Feed = ({
     return (
         <Wrapper>
             <div className="container" id="content">
+                <center><h1>TradeBlogger admin</h1></center>
+                <center><h3>Post news</h3></center>
+                <Articles/>
+                <center><h3>or</h3></center>
+                <div className="m-3 w-100">
+                    <ToggledModal
+                        TogglerElement={Button}
+                        ModalBody={PostCreate}
+                        headerTitle='SomeHeaderTitle'
+                        modalStyles={{ modalStyles: { width: '300px', marginTop: '150px' } }}
+                    />
+                </div>
+                <center><h3>Find Post by tag</h3></center>
                 <Flex column>
                     <div className="col-md-4">
                         <div>Filters</div>
@@ -40,12 +53,6 @@ const Feed = ({
                         </select>
                     </div>
                 </Flex>
-                <ToggledModal
-                    TogglerElement={Button}
-                    ModalBody={PostCreate}
-                    headerTitle='SomeHeaderTitle'
-                    modalStyles={{ modalStyles: { width: '300px', marginTop: '150px' } }}
-                />
                 <Flex column>
                     <div className="col-md-4">
                         <div>Tag</div>
@@ -62,7 +69,6 @@ const Feed = ({
                         {posts && _.map(posts, post => <Post key={post.id} post={post} />)}
                     </div>
                 </Flex>
-                <Articles/>
             </div>
         </Wrapper>
     );

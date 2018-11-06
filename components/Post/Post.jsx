@@ -32,7 +32,7 @@ const Post = ({
                 {body}
             </p>
             <Flex justify='center'>
-                <img src={image} className="w-100 img-responsive center-block"/>
+                <img src={image} className="mw-100 img-responsive center-block"/>
             </Flex>
             <p className="list-group-item-text text-right text-nowrap">{created}</p>
         </div>
