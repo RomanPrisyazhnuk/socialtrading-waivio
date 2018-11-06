@@ -8,6 +8,7 @@ import Post from "components/Post";
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import ToggledModal from 'components/common/Modal';
+import Articles from "./Articles";
 
 const Wrapper = styled.section`
   padding: 4em;
@@ -43,7 +44,7 @@ const Feed = ({
                     TogglerElement={Button}
                     ModalBody={PostCreate}
                     headerTitle='SomeHeaderTitle'
-                    modalStyles={{ modalStyles: { width: '300px', marginTop: '50px' } }}
+                    modalStyles={{ modalStyles: { width: '300px', marginTop: '150px' } }}
                 />
                 <Flex column>
                     <div className="col-md-4">
@@ -61,6 +62,7 @@ const Feed = ({
                         {posts && _.map(posts, post => <Post key={post.id} post={post} />)}
                     </div>
                 </Flex>
+                <Articles/>
             </div>
         </Wrapper>
     );

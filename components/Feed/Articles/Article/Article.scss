@@ -1,0 +1,25 @@
+
+.st-article {
+  text-decoration: none!important;
+  border-bottom: 1px solid #e9ecee;
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  padding: 5px;
+  &:hover {
+    background-color: white;
+    cursor: pointer;
+  }
+  .st-article-image {
+    border-radius: 3px;
+    width: 50px;
+    padding: 5px;
+  }
+  .st-article-text {
+    color: black;
+    width: 100%;
+    margin-left: 5px;
+    word-break: break-word;
+    font-size: 12px;
+  }
+}

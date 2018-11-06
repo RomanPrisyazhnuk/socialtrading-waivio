@@ -1,0 +1,19 @@
+
+$width: 60;
+.st-news-articles {
+  overflow: auto;
+  position: relative;
+  height: 417px;
+  .st-news-not-present {
+    margin-top: 160px;
+    text-align: center;
+    padding: 10px;
+    .st-news-reload-image {
+      margin-top: 10px;
+      &:hover {
+        transform: scale(1.2);
+        transition: transform 0.5s;
+      }
+    }
+  }
+}

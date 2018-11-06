@@ -44,7 +44,6 @@ const PostCreate = ({ createPost }) => {
                 type="text"
                 size="65"
                 className="form-control"
-                value="Here goes title"
             />
             <br/>
             Post body:

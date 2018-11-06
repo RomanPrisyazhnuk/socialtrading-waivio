@@ -17,6 +17,7 @@ const Post = ({
     const image = json.image ? json.image[0] : '';
     const title = post.title;
     const author = post.author;
+    const body = post.body;
     const created = new Date(post.created).toDateString();
     return (
         <div className="list-group-item">
@@ -26,6 +27,9 @@ const Post = ({
             <p>
                 by
                 {author}
+            </p>
+            <p>
+                {body}
             </p>
             <Flex justify='center'>
                 <img src={image} className="w-100 img-responsive center-block"/>

@@ -1,0 +1,51 @@
+.modal-article {
+  padding: 0!important;
+  .modal-header {
+    border: none;
+  }
+  .modal-article-header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    .modal-article-title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 700;
+      font-size: 25px;
+      padding: 5px;
+      margin: 15px;
+      text-align: center;
+      color: whitesmoke;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    .modal-article-image {
+      width: 100%;
+    }
+  }
+  .modal-article-top-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    font-style: italic;
+  }
+  .modal-article-bottom-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    font-style: italic;
+  }
+  .modal-article-content {
+    max-height: 300px;
+    padding: 0 15px;
+    overflow-y: auto;
+    word-break: break-word;
+  }
+}
