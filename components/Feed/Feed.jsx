@@ -37,7 +37,7 @@ const Feed = ({
                     <ToggledModal
                         TogglerElement={Button}
                         ModalBody={PostCreate}
-                        headerTitle='SomeHeaderTitle'
+                        headerTitle='Create post in steemit'
                         modalStyles={{ modalStyles: { width: '300px', marginTop: '150px' } }}
                     />
                 </div>
