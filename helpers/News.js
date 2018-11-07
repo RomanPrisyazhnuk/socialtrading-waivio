@@ -24,6 +24,7 @@ export default class News {
                 tags: _.map(article.Tags, tag => tag.Name),
                 created_at: article.PublishDate,
                 creator: article.Creator,
+                locale: article.Lang.Name,
                 text: article.Encoded && article.Encoded.replace(/<p>|<\/p>/gi, ''),
             };
         });

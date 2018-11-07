@@ -1,6 +1,6 @@
 import './Articles.scss';
 import _ from 'lodash';
-import { FormattedMessage } from 'react-intl';
+// import { FormattedMessage } from 'react-intl';
 // import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import News from 'helpers/News';
@@ -16,12 +16,16 @@ export class Articles extends Component {
     }
 
     componentDidMount() {
-        News.getLastNews(20, 'en', makeTags(['Currency'], 'en')).then((articles) => {
-            this.setState(
-                {
-                    articles,
-                },
-            );
+        let articles = [];
+        News.getLastNews(20, 'en', makeTags(['Currency'], 'en')).then((articlesEN) => {
+            News.getLastNews(20, 'es', []).then((articlesru) => {
+                articles = articlesEN.concat(articlesru);
+                this.setState(
+                    {
+                        articles,
+                    },
+                );
+            });
         });
     }
 

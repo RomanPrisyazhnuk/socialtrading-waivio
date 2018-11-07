@@ -29,6 +29,9 @@ export class Article extends Component {
                 <div className="st-article" onClick={this.toggleModalArticle}>
                     {this.props.language !== 'ru' && <img className="st-article-image" src={article.image || 'https://ipfs.busy.org/ipfs/QmTyfJ7V7ynvVfKnmUPo6zfcSVZ3X491uf4eo4K7HYDyna'}/>}
                     <span className="st-article-text">{article.title}</span>
+                    (
+                    {article.locale}
+                    )
                 </div>
                 <ModalArticle
                     toggleModalArticle={this.toggleModalArticle}

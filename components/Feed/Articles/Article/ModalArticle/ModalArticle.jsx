@@ -3,7 +3,6 @@ import './ModalArticle.scss';
 import { Modal, ModalBody } from 'reactstrap';
 import React, { Component } from 'react';
 import { injectIntl } from 'react-intl';
-// import moment from 'moment';
 import PropTypes from 'prop-types';
 import { PrivateKey } from "dsteem";
 
@@ -11,11 +10,25 @@ const propTypes = {
     article: PropTypes.object.isRequired,
 };
 // 5JRaypasxMx1L97ZUX7YuC5Psb5EAbF821kkAGtBj7xCJFQcbLg
+// monterey = '5JKTrjkXrXRsaYRwDpByazkjSm8juahvJLwjdVeRCXTAKFGMSU9'
+// stanislavh = '5J9m5YLeCgiMK3duuLhJEsxyRNjEqmPm4o7aSXBvC7wLDAVWq9Q'
 class ModalArticle extends Component {
-    handleSetDefaults() {
-        document.getElementById('postingKey').value = '5JRaypasxMx1L97ZUX7YuC5Psb5EAbF821kkAGtBj7xCJFQcbLg';
+    handleSetStanislavh() {
+        document.getElementById('postingKey').value = '5J9m5YLeCgiMK3duuLhJEsxyRNjEqmPm4o7aSXBvC7wLDAVWq9Q';
+        document.getElementById('username').value = 'stanislavh';
+        document.getElementById('tags').value = 'spanish';
+    }
+
+    handleSetMonterey() {
+        document.getElementById('postingKey').value = '5JKTrjkXrXRsaYRwDpByazkjSm8juahvJLwjdVeRCXTAKFGMSU9';
         document.getElementById('username').value = 'monterey';
-        document.getElementById('tags').value = 'money trade news';
+        document.getElementById('tags').value = 'money trade news cryptocurrency economics';
+    }
+
+    handleSetGuest123() {
+        document.getElementById('postingKey').value = '5JRaypasxMx1L97ZUX7YuC5Psb5EAbF821kkAGtBj7xCJFQcbLg';
+        document.getElementById('username').value = 'guest123';
+        document.getElementById('tags').value = 'bla';
     }
 
     handleCreatePost(article, createPost) {
@@ -27,7 +40,7 @@ class ModalArticle extends Component {
                 key,
             );
             const title = article.title;
-            const body = `<center><img src=${article.image || 'https://ipfs.busy.org/ipfs/QmTyfJ7V7ynvVfKnmUPo6zfcSVZ3X491uf4eo4K7HYDyna'} alt="asf"></center></br>${article.text}`;
+            const body = `<center><img src=${article.image || 'https://ipfs.busy.org/ipfs/QmTyfJ7V7ynvVfKnmUPo6zfcSVZ3X491uf4eo4K7HYDyna'}></center></br>${article.text}`;
             const taglist = tags.split(' ');
             const jsonMetadata = JSON.stringify(
                 {
@@ -79,7 +92,11 @@ class ModalArticle extends Component {
                 Tags:
                     <input id="tags" type="text" size="65" className="form-control"/>
                 </div>
-                <button className='btn btn-primary m-2' onClick={this.handleSetDefaults}>Set defaults</button>
+                <div className="d-flex">
+                    <button className='btn btn-primary m-2' onClick={this.handleSetStanislavh}>Stanislavh</button>
+                    <button className='btn btn-primary m-2' onClick={this.handleSetMonterey}>Monterey</button>
+                    <button className='btn btn-primary m-2' onClick={this.handleSetGuest123}>Guest123</button>
+                </div>
                 <button className='btn btn-primary m-2' onClick={this.handleCreatePost.bind(this, article, createPost)}>Send to Steem</button>
             </Modal>
         );

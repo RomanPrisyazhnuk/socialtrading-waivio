@@ -36,7 +36,7 @@ const PostCreate = ({ createPost }) => {
             <input id="username" type="text" size="65" className="form-control"/>
             <br/>
             Posting private key:
-            <input id="postingKey" type="password" size="65" className="form-control"/>
+            <input id="postingKey" size="65" className="form-control"/>
             <br/>
                 Title of post:
             <input
@@ -53,7 +53,7 @@ const PostCreate = ({ createPost }) => {
             </textarea>
             <br/>
             Tags:
-            <input id="tags" type="text" size="65" className="form-control" value="tag1 tag2 tag3"/>
+            <input id="tags" type="text" size="65" className="form-control"/>
             <br/>
             <button onClick={handleCreatePost}>SUBMIT</button>
         </Fragment>

@@ -27,6 +27,7 @@ export function* createPost({
         const data = yield call(api.createPost, payload);
         yield put(createPostSuccess(payload.payload));
     } catch (error) {
+        console.log(error);
         yield put(createPostError());
     }
 }
