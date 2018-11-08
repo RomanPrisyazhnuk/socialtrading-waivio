@@ -22,4 +22,9 @@ export default {
         const returnData = await client.broadcast.comment(payload.payload, payload.privateKey);
         return returnData;
     },
+    votePost: async (payload) => {
+        console.log('client.broadcast.upvote:', payload.payload);
+        const returnData = await client.broadcast.vote(payload.payload, payload.privateKey);
+        return returnData;
+    },
 };

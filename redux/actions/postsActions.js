@@ -35,3 +35,23 @@ export const createPostSuccess = payload => ({
 export const createPostError = () => ({
     type: CREATE_POST_ERROR,
 });
+
+export const VOTE_POST_REQUEST = 'VOTE_POST_REQUEST';
+export const VOTE_POST_SUCCESS = 'VOTE_POST_SUCCESS';
+export const VOTE_POST_ERROR = 'VOTE_POST_ERROR';
+
+
+export const votePost = (payload, privateKey) => ({
+    type: VOTE_POST_REQUEST,
+    payload,
+    privateKey,
+});
+
+export const votePostSuccess = payload => ({
+    type: VOTE_POST_SUCCESS,
+    payload,
+});
+
+export const votePostError = () => ({
+    type: VOTE_POST_ERROR,
+});

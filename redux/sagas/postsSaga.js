@@ -7,6 +7,9 @@ import {
     CREATE_POST_REQUEST,
     createPostSuccess,
     createPostError,
+    VOTE_POST_REQUEST,
+    votePostSuccess,
+    votePostError,
 } from '../actions/postsActions';
 
 export function* getPosts({
@@ -32,8 +35,20 @@ export function* createPost({
     }
 }
 
+export function* votePost({
+    payload,
+}) {
+    try {
+        const data = yield call(api.votePost, payload);
+        yield put(votePostSuccess(payload.payload));
+    } catch (error) {
+        console.log(error);
+        yield put(votePostError());
+    }
+}
 
 export default function* actionWatcher() {
     yield takeEvery(GET_POSTS_REQUEST, getPosts);
     yield takeEvery(CREATE_POST_REQUEST, createPost);
+    yield takeEvery(VOTE_POST_REQUEST, votePost);
 }
