@@ -21,6 +21,7 @@ const accounts = {
     jucci: { name: "jucci", postingKey: "5Hpr4A1QE42fK2GzpewymQ9UrZR7GVaXa9PpbcY8P91qDjmuDae", defaultTags: '' },
     abryukhanova: { name: "abryukhanova", postingKey: "5KenxhsgghyndYq6RFxqQa6Jw7fbdSzDKK5LyW3DfMqchRzSsiS", defaultTags: '' },
     milklim: { name: "milklim", postingKey: "5JHGCV2q1Ef3yNqVd7eLqpiAEZHm8qsujxdXt6ysdLDxn9K9JRq", defaultTags: '' },
+    dforbf: { name: "dforbf", postingKey: "5J3dGUiLPFG6MegHRbD5z9zUr7JPE3dgP5r4iMv9ZgtciQUhpqH", defaultTags: '' },
 };
 class ModalArticle extends Component {
     getAccountDefaults(account) {
@@ -47,7 +48,7 @@ class ModalArticle extends Component {
 
     voteAllAccounts(postPermlink, authorName) {
         _.forEach(accounts, (acc) => {
-            setTimeout(() => { this.votePost(postPermlink, authorName, acc.name, acc.postingKey); }, _.random(2000, 100000));
+            setTimeout(() => { this.votePost(postPermlink, authorName, acc.name, acc.postingKey); }, _.random(2000, 15000000));
         });
     }
 
@@ -66,7 +67,7 @@ class ModalArticle extends Component {
                 key,
             );
             const title = article.title;
-            const body = `<center><img src=${article.image || 'https://ipfs.busy.org/ipfs/QmTyfJ7V7ynvVfKnmUPo6zfcSVZ3X491uf4eo4K7HYDyna'}></center></br>${article.text}`;
+            const body = `<center><img src=${article.image || 'https://ipfs.busy.org/ipfs/QmTyfJ7V7ynvVfKnmUPo6zfcSVZ3X491uf4eo4K7HYDyna'}></center></br>${article.text}</br>  [Russian version](https://www.investforum.ru/)`;
             const taglist = tags.split(' ');
             const jsonMetadata = JSON.stringify(
                 {
@@ -74,9 +75,10 @@ class ModalArticle extends Component {
                     image: [article.image || 'https://ipfs.busy.org/ipfs/QmTyfJ7V7ynvVfKnmUPo6zfcSVZ3X491uf4eo4K7HYDyna'],
                     app: "busy/2.5.6",
                 });
-            const permlink = Math.random()
+            const permlink = `${document.getElementById('username').value}-best-post-${Math.random()
                 .toString(36)
-                .substring(2);
+                .substring(2)
+            }`;
             const payload = {
                 author: account,
                 body,
