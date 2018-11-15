@@ -23,7 +23,9 @@ const accounts = {
     milklim: { name: "milklim", postingKey: "5JHGCV2q1Ef3yNqVd7eLqpiAEZHm8qsujxdXt6ysdLDxn9K9JRq", defaultTags: '' },
     dforbf: { name: "dforbf", postingKey: "5J3dGUiLPFG6MegHRbD5z9zUr7JPE3dgP5r4iMv9ZgtciQUhpqH", defaultTags: '' },
     'taras-7': { name: "taras-7", postingKey: "5K3URoHVuJ8AujGdkaasLCaBQVjoVXwxKhVxeL6cwuV8rxnjeqr", defaultTags: '' },
-    grykat: { name: "taras-7", postingKey: "5JDfXBckB3viVP55vKyijPF638BReQZ8s8ZP2PYr9bkcXxgdr6d", defaultTags: '' },
+    grykat: { name: "grykat", postingKey: "5JDfXBckB3viVP55vKyijPF638BReQZ8s8ZP2PYr9bkcXxgdr6d", defaultTags: '' },
+    konstantinabr: { name: "konstantinabr", postingKey: "5KTdBZz2NMCztz5qe3LP6iAmexjjniddVUPN3zPatPnCYRJ4gih", defaultTags: '' },
+    xiorik: { name: "xiorik", postingKey: "5Jp99AfJTmh2gtGwLPjdJ8RwjfwP8AjpPNZfxSBBaw9AuhFVuc8", defaultTags: '' },
 };
 class ModalArticle extends Component {
     getAccountDefaults(account) {
