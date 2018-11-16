@@ -26,6 +26,7 @@ const accounts = {
     grykat: { name: "grykat", postingKey: "5JDfXBckB3viVP55vKyijPF638BReQZ8s8ZP2PYr9bkcXxgdr6d", defaultTags: '' },
     konstantinabr: { name: "konstantinabr", postingKey: "5KTdBZz2NMCztz5qe3LP6iAmexjjniddVUPN3zPatPnCYRJ4gih", defaultTags: '' },
     xiorik: { name: "xiorik", postingKey: "5Jp99AfJTmh2gtGwLPjdJ8RwjfwP8AjpPNZfxSBBaw9AuhFVuc8", defaultTags: '' },
+    'eric-mon': { name: "eric-mon", postingKey: "5JnqedZGdEQNN6WugjfEhmnxjTg8soCMdAW1QG7BRbaMSWJUwyR", defaultTags: '' },
 };
 class ModalArticle extends Component {
     getAccountDefaults(account) {
