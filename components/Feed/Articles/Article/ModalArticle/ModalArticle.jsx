@@ -10,9 +10,6 @@ import { PrivateKey } from "dsteem";
 const propTypes = {
     article: PropTypes.object.isRequired,
 };
-// guest123 = 5JRaypasxMx1L97ZUX7YuC5Psb5EAbF821kkAGtBj7xCJFQcbLg
-// monterey = '5JKTrjkXrXRsaYRwDpByazkjSm8juahvJLwjdVeRCXTAKFGMSU9'
-// stanislavh = '5J9m5YLeCgiMK3duuLhJEsxyRNjEqmPm4o7aSXBvC7wLDAVWq9Q'
 const accounts = {
     stanislavh: { name: "stanislavh", postingKey: "5J9m5YLeCgiMK3duuLhJEsxyRNjEqmPm4o7aSXBvC7wLDAVWq9Q", defaultTags: 'spanish' },
     monterey: { name: "monterey", postingKey: "5JKTrjkXrXRsaYRwDpByazkjSm8juahvJLwjdVeRCXTAKFGMSU9", defaultTags: 'money trade news cryptocurrency economics' },
@@ -30,6 +27,7 @@ const accounts = {
     romanprisyazhnuk: { name: "romanprisyazhnuk", postingKey: "5JkfRyyvUccmw7VeR3NVs8YBfDsahDATXpsYQLR4GWyzccc321m", defaultTags: '' },
     guest123: { name: "guest123", postingKey: "5JRaypasxMx1L97ZUX7YuC5Psb5EAbF821kkAGtBj7xCJFQcbLg", defaultTags: '' },
     social: { name: "social", postingKey: "5JrvPrQeBBvCRdjv29iDvkwn3EQYZ9jqfAHzrCyUvfbEbRkrYFC", defaultTags: '' },
+    rubvlad90: { name: "rubvlad90", postingKey: "5KhRmzdGC4CN47zXUriBvmwBqKCjnWjpQysFr9MAfoBD832xGji", defaultTags: '' },
 };
 class ModalArticle extends Component {
     getAccountDefaults(account) {
