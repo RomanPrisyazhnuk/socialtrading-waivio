@@ -10,6 +10,9 @@ import {
     VOTE_POST_REQUEST,
     votePostSuccess,
     votePostError,
+    GET_STREEM_REQUEST,
+    getStreamSuccess,
+    getStreamError,
 } from '../actions/postsActions';
 
 export function* getPosts({
@@ -46,9 +49,21 @@ export function* votePost({
         yield put(votePostError());
     }
 }
+export function* getStream({
+    payload,
+}) {
+    try {
+        const data = yield call(api.getStream, payload);
+        yield put(getStreamSuccess(payload.payload));
+    } catch (error) {
+        console.log(error);
+        yield put(getStreamError());
+    }
+}
 
 export default function* actionWatcher() {
     yield takeEvery(GET_POSTS_REQUEST, getPosts);
     yield takeEvery(CREATE_POST_REQUEST, createPost);
     yield takeEvery(VOTE_POST_REQUEST, votePost);
+    yield takeEvery(GET_STREEM_REQUEST, getStream);
 }

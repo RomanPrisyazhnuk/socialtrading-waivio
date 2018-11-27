@@ -1,7 +1,9 @@
-
 const dsteem = require('dsteem');
 
 const opts = {};
+const es = require('event-stream');
+const util = require('util');
+const { parseSwitcher } = require('../parsers/main');
 
 //connect to production server
 opts.addressPrefix = 'STM';
@@ -26,5 +28,13 @@ export default {
         console.log('client.broadcast.upvote:', payload.payload);
         const returnData = await client.broadcast.vote(payload.payload, payload.privateKey);
         return returnData;
+    },
+    getStream: async () => {
+        const stream = client.blockchain.getBlockStream();
+        stream.pipe(es.map((block, callback) => {
+            parseSwitcher(block.transactions);
+            callback(null, `${util.inspect(block, { colors: true, depth: null })}\n`);
+        }));
+        return {};
     },
 };

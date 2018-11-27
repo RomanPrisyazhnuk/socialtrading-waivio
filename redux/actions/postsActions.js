@@ -55,3 +55,23 @@ export const votePostSuccess = payload => ({
 export const votePostError = () => ({
     type: VOTE_POST_ERROR,
 });
+
+export const GET_STREEM_REQUEST = 'GET_STREEM_REQUEST';
+export const GET_STREEM_SUCCESS = 'GET_STREEM_SUCCESS';
+export const GET_STREEM_ERROR = 'GET_STREEM_ERROR';
+
+
+export const getStream = (payload, privateKey) => ({
+    type: VOTE_POST_REQUEST,
+    payload,
+    privateKey,
+});
+
+export const getStreamSuccess = payload => ({
+    type: VOTE_POST_SUCCESS,
+    payload,
+});
+
+export const getStreamError = () => ({
+    type: VOTE_POST_ERROR,
+});
