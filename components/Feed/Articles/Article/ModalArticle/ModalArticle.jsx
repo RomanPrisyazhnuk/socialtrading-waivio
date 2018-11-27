@@ -28,6 +28,21 @@ const accounts = {
     guest123: { name: "guest123", postingKey: "5JRaypasxMx1L97ZUX7YuC5Psb5EAbF821kkAGtBj7xCJFQcbLg", defaultTags: '' },
     social: { name: "social", postingKey: "5JrvPrQeBBvCRdjv29iDvkwn3EQYZ9jqfAHzrCyUvfbEbRkrYFC", defaultTags: '' },
     rubvlad90: { name: "rubvlad90", postingKey: "5KhRmzdGC4CN47zXUriBvmwBqKCjnWjpQysFr9MAfoBD832xGji", defaultTags: '' },
+    z1wo5: { name: "z1wo5", postingKey: "5KdaTAEnJrTUtPCekHDgUj2uue1SzQ73kzpzNez38T5YGG5pCXf", defaultTags: '' },
+    et42k: { name: "et42k", postingKey: "5JFWe4p3skoSNjcWQqU3FUPeokQzSaFJWU7aPo8HQ9h4oQSK4QB", defaultTags: '' },
+    suy38: { name: "suy38", postingKey: "5KSdyYaufynJL3XcFs3LSBzpN3Y7vPHzFxpA55WuFQeBeT7HE3o", defaultTags: '' },
+    x45ki: { name: "x45ki", postingKey: "5Kk3YTYsxzUB4C8xcfzzqd39AqbVQHB2Q3BK3ATNeMbAWtBpFNA", defaultTags: '' },
+    q13lp: { name: "q13lp", postingKey: "5HyZaKTUXQob3GmyhhsdqwYr7GQdzZsWbR17pTHZGFWTK71Bfsg", defaultTags: '' },
+    j5gs7: { name: "j5gs7", postingKey: "5HuTbyf1vs8NGQJEhzWf2CovTS4XuwpWAt9bSvp97W1KMtgC4uK", defaultTags: '' },
+    q1w2c: { name: "q1w2c", postingKey: "5KD6uc5CSVHFWGSpgCiHsKaburPjHTKsf7QPyUxBiTDQAQmLbt7", defaultTags: '' },
+    no58s: { name: "no58s", postingKey: "5JWXBiZTACSKHUHJxNR2z3TFEUDwxBYnzQV28f3uE2iqxaDcM3q", defaultTags: '' },
+    mhg41: { name: "mhg41", postingKey: "5HpXSc5EEhmH2QcCDX2hzKr5KFEKU9s7SuVqMnYLiaxWqtYZDjq", defaultTags: '' },
+    b23df: { name: "b23df", postingKey: "5KK5XMEqsBM286ffBFc3Ao69aT2Aj5ebSscPwZm32hwiTG9JZT7", defaultTags: '' },
+    vp4g5: { name: "vp4g5", postingKey: "5KP97BqrkW6oY9hKLegYGSZq1aHJs7muATPD7qWPFc8Hmz1r5pf", defaultTags: '' },
+    an98r: { name: "an98r", postingKey: "5JyaqqVMU97Nwa8XLqUdb5LJeMe8nC9oTRovGPxhAig32z8GdSa", defaultTags: '' },
+    npo31: { name: "npo31", postingKey: "5HvRSKTjcNC3KyCDd7NmpdjvHKTZAzPiVnaDc754Cdty2fsunq1", defaultTags: '' },
+    w1c6c: { name: "w1c6c", postingKey: "5JWFe4aFLw2dQSwvb14e4uF99w4zdP4yNa7LpJL53HmhgSD9G1B", defaultTags: '' },
+    nn13b: { name: "nn13b", postingKey: "5Jjqb9EejgWMjDx4XM85CqSKcPJTFvPUZqWhCfUHNt5hA8tZaH3", defaultTags: '' },
 };
 class ModalArticle extends Component {
     getAccountDefaults(account) {
