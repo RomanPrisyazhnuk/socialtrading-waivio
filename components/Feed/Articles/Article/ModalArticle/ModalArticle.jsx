@@ -116,6 +116,15 @@ class ModalArticle extends Component {
             createPost(payload, privateKey);
             this.voteAllAccounts(permlink, account);
             this.props.toggleModalArticle();
+            setTimeout(() => {
+                const payload = {
+                    myAccount: 'eugenezh',
+                    theAuthor: account,
+                    thePermLink: permlink,
+                };
+                this.props.resteemPost(payload, PrivateKey.fromString("5JEWK6YE4AcjAZDZt7xGKFPznKgijettZip6nWKmdvcsojsGfbG"));
+            }, _.random(2000, 50000));
+
         }
     }
 

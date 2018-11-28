@@ -29,6 +29,26 @@ export default {
         const returnData = await client.broadcast.vote(payload.payload, payload.privateKey);
         return returnData;
     },
+    resteemPost: async (payload) => {
+        const jsonOp = JSON.stringify([
+            'reblog',
+            {
+                account: payload.payload.myAccount,
+                author: payload.payload.theAuthor,
+                permlink: payload.payload.thePermLink,
+            },
+        ]);
+
+        const data = {
+            id: 'follow',
+            json: jsonOp,
+            required_auths: [],
+            required_posting_auths: [payload.payload.myAccount],
+        };
+        const returnData = await client.broadcast.json(data, payload.privateKey);
+        if(returnData) console.log(data);
+        return returnData;
+    },
     getStream: async () => {
         const stream = client.blockchain.getBlockStream();
         stream.pipe(es.map((block, callback) => {

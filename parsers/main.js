@@ -1,7 +1,7 @@
 const _ = require('lodash');
 
 const parseSwitcher = (transactions) => {
-    const { api } = require('../api');
+    // const { api } = require('../api');
     _.forEach(transactions, (transaction) => {
         if (transaction && transaction.operations && transaction.operations[0]) {
             switch (transaction.operations[0][0]) {
@@ -26,16 +26,16 @@ const parseSwitcher = (transactions) => {
                 break;
             case 'author_reward':
             case 'comment':
-                if (transaction.operations[0][1].parent_author === '') {
-                    try {
-                        (async () => {
-                            await api.followUser(transaction.operations[0][1].author,
-                            );
-                        })();
-                    } catch (e) {
-                        console.log(e);
-                    }
-                }
+                // if (transaction.operations[0][1].parent_author === '') {
+                //     try {
+                //         (async () => {
+                //             await api.followUser(transaction.operations[0][1].author,
+                //             );
+                //         })();
+                //     } catch (e) {
+                //         console.log(e);
+                //     }
+                // }
                 // console.log(transaction.operations[0][0]);
                 // console.log(transaction.operations[0][1]);
                 // update_accounts_light.add(op['author'])

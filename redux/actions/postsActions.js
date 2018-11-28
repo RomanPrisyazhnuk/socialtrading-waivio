@@ -75,3 +75,23 @@ export const getStreamSuccess = payload => ({
 export const getStreamError = () => ({
     type: VOTE_POST_ERROR,
 });
+
+export const RESTEEM_POST_REQUEST = 'RESTEEM_POST_REQUEST';
+export const RESTEEM_POST_SUCCESS = 'RESTEEM_POST_SUCCESS';
+export const RESTEEM_POST_ERROR = 'RESTEEM_POST_ERROR';
+
+
+export const resteemPost = (payload, privateKey) => ({
+    type: RESTEEM_POST_REQUEST,
+    payload,
+    privateKey,
+});
+
+export const resteemPostSuccess = payload => ({
+    type: RESTEEM_POST_SUCCESS,
+    payload,
+});
+
+export const resteemPostError = () => ({
+    type: RESTEEM_POST_ERROR,
+});
