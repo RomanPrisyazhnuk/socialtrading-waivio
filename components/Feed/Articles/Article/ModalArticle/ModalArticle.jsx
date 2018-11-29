@@ -72,7 +72,9 @@ class ModalArticle extends Component {
 
     voteAllAccounts(postPermlink, authorName) {
         _.forEach(accounts, (acc) => {
-            setTimeout(() => { this.votePost(postPermlink, authorName, acc.name, acc.postingKey); }, _.random(2000, 150000));
+            if (Math.floor(Math.random() * 10) < 7) {
+                setTimeout(() => { this.votePost(postPermlink, authorName, acc.name, acc.postingKey); }, _.random(2000, 150000));
+            }
         });
     }
 
