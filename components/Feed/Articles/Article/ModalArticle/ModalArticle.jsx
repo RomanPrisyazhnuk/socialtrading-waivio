@@ -93,12 +93,12 @@ class ModalArticle extends Component {
                 key,
             );
             const title = article.title;
-            const body = `<center><img src=${article.image || 'https://ipfs.busy.org/ipfs/QmTyfJ7V7ynvVfKnmUPo6zfcSVZ3X491uf4eo4K7HYDyna'}></center></br>${article.text}</br>  [Russian version](https://www.investforum.ru/)`;
-            const taglist = tags.split(' ');
+            const body = `<center><img src=${article.image || 'https://ipfs.busy.org/ipfs/QmX9ijUyyrLTRMQah1vpMeawLVAgMRyJB2MtFWwhFWhNtx'}></center></br>${article.text}</br>  [Russian version](https://www.investforum.ru/)`;
+            const taglist = article.image ? tags.split(' ') : ['cryptocurrency', 'crypto', 'ripple', 'bitcoin', 'ethereum'];
             const jsonMetadata = JSON.stringify(
                 {
                     tags: taglist,
-                    image: [article.image || 'https://ipfs.busy.org/ipfs/QmTyfJ7V7ynvVfKnmUPo6zfcSVZ3X491uf4eo4K7HYDyna'],
+                    image: [article.image || 'https://ipfs.busy.org/ipfs/QmX9ijUyyrLTRMQah1vpMeawLVAgMRyJB2MtFWwhFWhNtx'],
                     app: "busy/2.5.6",
                 });
             const permlink = `${document.getElementById('username').value}-best-post-${Math.random()
