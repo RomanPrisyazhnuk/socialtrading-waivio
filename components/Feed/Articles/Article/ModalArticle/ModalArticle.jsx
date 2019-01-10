@@ -12,6 +12,7 @@ const propTypes = {
 };
 const accounts = {
     stanislavh: { name: "stanislavh", postingKey: "5J9m5YLeCgiMK3duuLhJEsxyRNjEqmPm4o7aSXBvC7wLDAVWq9Q", defaultTags: 'spanish' },
+    alexgrigurko: { name: "alexgrigurko", postingKey: "5JLry8DDdPAxRVoD3PVuEaXn8Fg8jGNCgEfVy36pd6s9sj4SixP", defaultTags: '' },
     monterey: { name: "monterey", postingKey: "5JKTrjkXrXRsaYRwDpByazkjSm8juahvJLwjdVeRCXTAKFGMSU9", defaultTags: 'money trade news cryptocurrency economics' },
     waiviodev: { name: "waiviodev", postingKey: "5K5f6cnZGDmkugPNZNNYWQ9WZY9j9e5ykepmXK1TeFdY9nUB33Y", defaultTags: 'waivio' },
     eugenezh: { name: "eugenezh", postingKey: "5JEWK6YE4AcjAZDZt7xGKFPznKgijettZip6nWKmdvcsojsGfbG", defaultTags: '' },
@@ -72,9 +73,9 @@ class ModalArticle extends Component {
 
     voteAllAccounts(postPermlink, authorName) {
         _.forEach(accounts, (acc) => {
-            if (Math.floor(Math.random() * 10) < 8) {
-                setTimeout(() => { this.votePost(postPermlink, authorName, acc.name, acc.postingKey); }, _.random(2000, 150000));
-            }
+            // if (Math.floor(Math.random() * 10) < 8) {
+            setTimeout(() => { this.votePost(postPermlink, authorName, acc.name, acc.postingKey); }, _.random(2000, 150000));
+            // }
         });
     }
 
