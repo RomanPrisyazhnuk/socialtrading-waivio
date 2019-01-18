@@ -16,7 +16,6 @@ export class Articles extends Component {
     }
 
     componentDidMount() {
-        let articles = [];
         News.getLastNews(50, 'en', makeTags(['Currency'], 'en')).then((articlesEN) => {
             this.setState(
                 {
