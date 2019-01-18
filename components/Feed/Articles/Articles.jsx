@@ -17,15 +17,12 @@ export class Articles extends Component {
 
     componentDidMount() {
         let articles = [];
-        News.getLastNews(20, 'en', makeTags(['Currency'], 'en')).then((articlesEN) => {
-            News.getLastNews(20, 'es', []).then((articlesru) => {
-                articles = articlesEN.concat(articlesru);
-                this.setState(
-                    {
-                        articles,
-                    },
-                );
-            });
+        News.getLastNews(50, 'en', makeTags(['Currency'], 'en')).then((articlesEN) => {
+            this.setState(
+                {
+                    articles: articlesEN,
+                },
+            );
         });
     }
 

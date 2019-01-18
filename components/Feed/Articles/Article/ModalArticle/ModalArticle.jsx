@@ -58,9 +58,6 @@ class ModalArticle extends Component {
         document.getElementById('username').value = 'guest123';
         document.getElementById('tags').value = 'bla';
     }
-    handleGetStream() {
-
-    }
 
     votePost(postPermlink, authorName, voterName, privateKey) {
         const vote = {
