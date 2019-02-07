@@ -38,6 +38,7 @@
     "npm": "^6.4.1",
     "nprogress": "^0.2.0",
     "prop-types": "^15.6.2",
+    "random-sentence": "^1.0.4",
     "react": "^16.5.0",
     "react-datepicker": "^1.6.0",
     "react-dom": "^16.4.2",

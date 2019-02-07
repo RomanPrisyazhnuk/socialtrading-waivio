@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import { PrivateKey } from "dsteem";
+import randomSentence from "random-sentence";
 
 const propTypes = {
     article: PropTypes.object.isRequired,
@@ -47,6 +48,13 @@ const accounts = {
     nn13b: { name: "nn13b", postingKey: "5Jjqb9EejgWMjDx4XM85CqSKcPJTFvPUZqWhCfUHNt5hA8tZaH3", defaultTags: '' },
 };
 class ModalArticle extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isStarted: false,
+        };
+    }
+
     getAccountDefaults(account) {
         document.getElementById('postingKey').value = accounts[account].postingKey;
         document.getElementById('username').value = accounts[account].name;
@@ -81,6 +89,49 @@ class ModalArticle extends Component {
         const postPermlink = document.getElementById('permlinkPostToLike').value;
         const authorName = document.getElementById('authorToLike').value;
         this.voteAllAccounts(postPermlink, authorName);
+    }
+
+    runProcess(createPost) {
+        if (!this.state.isStarted) this.setState({ isStarted: true });
+        this.handleRunProcess(createPost);
+    }
+
+    stopProcess() {
+        if (this.state.isStarted) this.setState({ isStarted: false });
+    }
+
+    handleRunProcess(createPost) {
+        if (this.state.isStarted) {
+            const key = "5JKTrjkXrXRsaYRwDpByazkjSm8juahvJLwjdVeRCXTAKFGMSU9";
+            const account = 'monterey';
+            if (key && account) {
+                const privateKey = PrivateKey.fromString(
+                    key,
+                );
+                const title = '';
+                const body = randomSentence({ words: 5 });
+                const jsonMetadata = JSON.stringify(
+                    {
+                        app: "busy/2.5.6",
+                    });
+                const permlink = Math.random().toString(36).substring(2);
+                const payload = {
+                    author: account,
+                    body,
+                    json_metadata: jsonMetadata,
+                    parent_author: 'x45ki',
+                    parent_permlink: 'ius-kitai-luchshii',
+                    permlink,
+                    title,
+                };
+                console.log(payload.toString());
+                createPost(payload, privateKey);
+                this.voteAllAccounts(permlink, account);
+                setTimeout(() => {
+                    this.handleRunProcess(createPost);
+                }, 10800000);
+            }
+        }
     }
 
     handleCreatePost(article, createPost) {
@@ -125,7 +176,6 @@ class ModalArticle extends Component {
                 };
                 this.props.resteemPost(payload, PrivateKey.fromString("5JEWK6YE4AcjAZDZt7xGKFPznKgijettZip6nWKmdvcsojsGfbG"));
             }, _.random(2000, 50000));
-
         }
     }
 
@@ -143,6 +193,8 @@ class ModalArticle extends Component {
                         {article.text}
                     </div>
                 </ModalBody>
+                <button className='btn btn-primary m-2 w-100' onClick={this.runProcess.bind(this, createPost)}>RunProcess</button>
+                <button className='btn btn-primary m-2 w-100' onClick={this.stopProcess.bind(this)}>StopProcess</button>
                 <div className='m-2'>
                     Username:
                     <input id="username" type="text" size="65" className="form-control"/>
