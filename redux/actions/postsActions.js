@@ -95,3 +95,23 @@ export const resteemPostSuccess = payload => ({
 export const resteemPostError = () => ({
     type: RESTEEM_POST_ERROR,
 });
+
+export const SEND_CUSTOM_REQUEST = 'SEND_CUSTOM_REQUEST';
+export const SEND_CUSTOM_SUCCESS = 'SEND_CUSTOM_SUCCESS';
+export const SEND_CUSTOM_ERROR = 'SEND_CUSTOM_ERROR';
+
+
+export const sendCustom = (payload, privateKey) => ({
+    type: SEND_CUSTOM_REQUEST,
+    payload,
+    privateKey,
+});
+
+export const sendCustomSuccess = payload => ({
+    type: RESTEEM_POST_SUCCESS,
+    payload,
+});
+
+export const sendCustomError = () => ({
+    type: RESTEEM_POST_ERROR,
+});

@@ -46,7 +46,24 @@ export default {
             required_posting_auths: [payload.payload.myAccount],
         };
         const returnData = await client.broadcast.json(data, payload.privateKey);
-        if(returnData) console.log(data);
+        if (returnData) console.log(data);
+        return returnData;
+    },
+    sendCustom: async (payload) => {
+        // const jsonOp = JSON.stringify({"username":"monterey","amount":"100000"},
+        const jsonOp = JSON.stringify({"username":"stanislavh","defender":"eugenezh","army":[{"unit":"bouncer","amount":1}]},
+        // const jsonOp = JSON.stringify({"username":"rubvlad90","referrer":"monterey"},
+        );
+        const data = {
+            // id: 'dw-referral',
+            // id: 'dw-heist',
+            id: 'dw-attack',
+            json: jsonOp,
+            required_auths: [],
+            required_posting_auths: ['stanislavh'],
+        };
+        const returnData = await client.broadcast.json(data, payload.privateKey);
+        if (returnData) console.log(data);
         return returnData;
     },
     getStream: async () => {

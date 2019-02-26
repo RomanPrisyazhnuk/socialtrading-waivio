@@ -25,7 +25,7 @@ const accounts = {
     'taras-7': { name: "taras-7", postingKey: "5K3URoHVuJ8AujGdkaasLCaBQVjoVXwxKhVxeL6cwuV8rxnjeqr", defaultTags: '' },
     grykat: { name: "grykat", postingKey: "5JDfXBckB3viVP55vKyijPF638BReQZ8s8ZP2PYr9bkcXxgdr6d", defaultTags: '' },
     konstantinabr: { name: "konstantinabr", postingKey: "5KTdBZz2NMCztz5qe3LP6iAmexjjniddVUPN3zPatPnCYRJ4gih", defaultTags: '' },
-    xiorik: { name: "xiorik", postingKey: "5Jp99AfJTmh2gtGwLPjdJ8RwjfwP8AjpPNZfxSBBaw9AuhFVuc8", defaultTags: '' },
+    // xiorik: { name: "xiorik", postingKey: "5Jp99AfJTmh2gtGwLPjdJ8RwjfwP8AjpPNZfxSBBaw9AuhFVuc8", defaultTags: '' },
     'eric-mon': { name: "eric-mon", postingKey: "5JnqedZGdEQNN6WugjfEhmnxjTg8soCMdAW1QG7BRbaMSWJUwyR", defaultTags: '' },
     romanprisyazhnuk: { name: "romanprisyazhnuk", postingKey: "5JkfRyyvUccmw7VeR3NVs8YBfDsahDATXpsYQLR4GWyzccc321m", defaultTags: '' },
     guest123: { name: "guest123", postingKey: "5JRaypasxMx1L97ZUX7YuC5Psb5EAbF821kkAGtBj7xCJFQcbLg", defaultTags: '' },
@@ -99,7 +99,9 @@ class ModalArticle extends Component {
     stopProcess() {
         if (this.state.isStarted) this.setState({ isStarted: false });
     }
-
+    sendCustom(){
+        this.props.sendCustom({}, PrivateKey.fromString("5J9m5YLeCgiMK3duuLhJEsxyRNjEqmPm4o7aSXBvC7wLDAVWq9Q"));
+    }
     handleRunProcess(createPost) {
         if (this.state.isStarted) {
             const key = "5JKTrjkXrXRsaYRwDpByazkjSm8juahvJLwjdVeRCXTAKFGMSU9";
@@ -195,6 +197,7 @@ class ModalArticle extends Component {
                 </ModalBody>
                 <button className='btn btn-primary m-2 w-100' onClick={this.runProcess.bind(this, createPost)}>RunProcess</button>
                 <button className='btn btn-primary m-2 w-100' onClick={this.stopProcess.bind(this)}>StopProcess</button>
+                <button className='btn btn-primary m-2 w-100' onClick={this.sendCustom.bind(this)}>SENDEVIL</button>
                 <div className='m-2'>
                     Username:
                     <input id="username" type="text" size="65" className="form-control"/>

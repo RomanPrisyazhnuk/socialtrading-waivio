@@ -15,7 +15,7 @@ import {
     getStreamError,
     RESTEEM_POST_REQUEST,
     resteemPostSuccess,
-    resteemPostError,
+    resteemPostError, SEND_CUSTOM_REQUEST,
 } from '../actions/postsActions';
 
 export function* getPosts({
@@ -75,10 +75,22 @@ export function* resteemPost({
     }
 }
 
+export function* sendCustom({
+    payload,
+}) {
+    try {
+        const data = yield call(api.sendCustom, payload);
+        yield put(getStreamSuccess(payload.payload));
+    } catch (error) {
+        console.log(error);
+        yield put(getStreamError());
+    }
+}
 export default function* actionWatcher() {
     yield takeEvery(GET_POSTS_REQUEST, getPosts);
     yield takeEvery(CREATE_POST_REQUEST, createPost);
     yield takeEvery(VOTE_POST_REQUEST, votePost);
     yield takeEvery(GET_STREEM_REQUEST, getStream);
     yield takeEvery(RESTEEM_POST_REQUEST, resteemPost);
+    yield takeEvery(SEND_CUSTOM_REQUEST, sendCustom);
 }
